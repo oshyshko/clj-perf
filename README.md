@@ -41,17 +41,19 @@ Version:  1.4.0
 "Elapsed time: 6007.356 msecs"
 "Elapsed time: 5926.243 msecs"
 "Elapsed time: 5756.16 msecs"
-
 ```
 
 Playing with a profiler leads to PersistentHashMap.
 
-![image][https://github.com/oshyshko/clj-perf/raw/master/doc/clj_13.png]
-![image][https://github.com/oshyshko/clj-perf/raw/master/doc/clj_14.png]
+Clojure 1.3
+![image](https://github.com/oshyshko/clj-perf/raw/master/doc/clj_13.png)
+
+Clojure 1.4
+![image](https://github.com/oshyshko/clj-perf/raw/master/doc/clj_14.png)
 
 It seems that the new PersistentHashMap.valAt(...) from 1.4 eats more CPU.
-According to profiler report it spends more cycles in own time (method body, 3208ms --> 3917ms), plus,
-further calls to Uitl.hasheq(...) (900ms --> 2684ms).
+According to profiler report it spends more cycles in own time **3208ms --> 3917ms**, plus,
+further calls to new Uitl.hasheq(...) **900ms --> 2684ms**.
 
 It looks like there is a recurring pattern that the code runs longer with Clojure 1.4.
 
