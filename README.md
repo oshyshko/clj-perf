@@ -51,8 +51,7 @@ Clojure 1.3
 Clojure 1.4
 ![image](https://github.com/oshyshko/clj-perf/raw/master/doc/clj_14.png)
 
-It seems that the new PersistentHashMap.valAt(...) from 1.4 eats more CPU.
-According to profiler report it spends more cycles in own time **3208ms --> 3917ms**, plus,
+According to profiler report new PersistentHashMap.valAt(...) from 1.4 spends more cycles in own time **3208ms --> 3917ms**, plus,
 further calls to new Util.hasheq(...) **900ms --> 2684ms**.
 
 ## License
