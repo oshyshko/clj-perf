@@ -6,21 +6,21 @@ between Clojure versions 1.3 and 1.4.
 Consider the following snippet:
 
 ```clj
-  (println "Version: " (clojure-version))
+(println "Version: " (clojure-version))
 
-  (def mm 10000)
+(def mm 10000)
 
-  (def str-keys (map str (range mm)))
-  (def m (zipmap str-keys (range mm)))
-  (time (dotimes [i mm] (doseq [k str-keys] (m k))))
+(def str-keys (map str (range mm)))
+(def m (zipmap str-keys (range mm)))
+(time (dotimes [i mm] (doseq [k str-keys] (m k))))
 
-  (def kw-keys (map #(keyword (str %)) (range mm)))
-  (def m (zipmap kw-keys (range mm)))
-  (time (dotimes [i mm] (doseq [k kw-keys] (m k))))
+(def kw-keys (map #(keyword (str %)) (range mm)))
+(def m (zipmap kw-keys (range mm)))
+(time (dotimes [i mm] (doseq [k kw-keys] (m k))))
 
-  (def sym-keys (map #(symbol (str %)) (range mm)))
-  (def m (zipmap sym-keys (range mm)))
-  (time (dotimes [i mm] (doseq [k sym-keys] (m k))))
+(def sym-keys (map #(symbol (str %)) (range mm)))
+(def m (zipmap sym-keys (range mm)))
+(time (dotimes [i mm] (doseq [k sym-keys] (m k))))
 ```
 
 Running this code with Clojure 1.3 and 1.4 yields some interesting output (depends on your machine).
