@@ -1,6 +1,7 @@
 # clj-perf
 
-A demo project showing performance degradation of PersistentHashMap.valAt(...) in Clojure 1.4.
+It seems there is a 30-40% performance degradation of PersistentHashMap.valAt(...) in Clojure 1.4.
+Possibly due to references to new CPU-hungry implementation of Util.hasheq(...).
 
 Consider the following snippet:
 
