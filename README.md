@@ -51,8 +51,8 @@ Clojure 1.3
 Clojure 1.4
 ![image](https://github.com/oshyshko/clj-perf/raw/master/doc/clj_14.png)
 
-According to profiler report new PersistentHashMap.valAt(...) from 1.4 spends more cycles in own time **3208ms --> 3917ms**, plus,
-further calls to new Util.hasheq(...) **900ms --> 2684ms**.
+According to profiler report the new PersistentHashMap.valAt(...) from 1.4 spends more cycles on its own **3208ms --> 3917ms**, plus,
+on further calls to Util.hasheq(...) **900ms --> 2684ms**.
 
 ## License
 
