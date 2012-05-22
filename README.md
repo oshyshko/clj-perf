@@ -1,7 +1,6 @@
 # clj-perf
 
-A small demo project that shows performance degradation of PersistentHashMap
-between Clojure versions 1.3 and 1.4.
+A demo project showing performance degradation of PersistentHashMap.valAt(...) in Clojure 1.4.
 
 Consider the following snippet:
 
@@ -23,7 +22,7 @@ Consider the following snippet:
 (time (dotimes [i mm] (doseq [k sym-keys] (m k))))
 ```
 
-Running this code with Clojure 1.3 and 1.4 yields some interesting output (depends on your machine).
+Running this code with Clojure 1.3 and 1.4 yields some interesting output (actual numbers depend on your machine).
 
 ```
 $ lein run-all
@@ -53,10 +52,7 @@ Clojure 1.4
 
 It seems that the new PersistentHashMap.valAt(...) from 1.4 eats more CPU.
 According to profiler report it spends more cycles in own time **3208ms --> 3917ms**, plus,
-further calls to new Uitl.hasheq(...) **900ms --> 2684ms**.
-
-It looks like there is a recurring pattern that the code runs longer with Clojure 1.4.
-
+further calls to new Util.hasheq(...) **900ms --> 2684ms**.
 
 ## License
 
