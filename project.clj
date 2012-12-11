@@ -11,7 +11,7 @@
              :1.4 {:dependencies [[org.clojure/clojure "1.4.0"]]}
              :1.5 {:dependencies [[org.clojure/clojure "1.5.0-master-SNAPSHOT"]]}}
 
-  :aliases {"run-all" ["with-profile" "1.3:1.4" "run"]}
+  :aliases {"run-all" ["with-profile" "1.3:1.4:1.5" "run"]}
 
   :main clj-perf.core
 
